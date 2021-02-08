@@ -1,0 +1,15 @@
+/* contents wrap style */
+.wrap{width: 100%; height: 100%; background: #edf7f0;}
+
+/* Header style */
+header{width: 100%; height: auto; background: #12595b; color: #fff;}
+header .headerWrap{display: flex; align-items: center; justify-content: space-between;}
+header .headerWrap .mIcon{width: 30px; height: auto; display: flex; flex-wrap: wrap; justify-content: flex-end;}
+header .headerWrap .mIcon span{width: 100%; height: 2px; background: #fff; display: block;}
+header .headerWrap .mIcon span:nth-child(2){margin: 5px 0; width: 50%;}
+header .headerWrap .mIcon span:nth-child(3){width: 70%;}
+
+header h1{font-weight: 600; font-size: 22px; padding: 10px 0;}
+
+/* Container Style */
+.container{width: 100%; height: auto; padding: 20px 0;}
