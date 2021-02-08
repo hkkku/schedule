@@ -28,7 +28,30 @@
       </header>
 
       <!-- container section -->
-      <div class="container"></div>
+      <div class="center">
+        <div class="container">
+          <div class="item">
+            <section class="graph-circle">
+              <div class="circle-graph-container">
+                <div class="circle-graph easyPieChart" data-percent="65">
+                  <p>65%</p>
+                  <!-- <canvas width="269" height="269" style="width: 150px; height: 150px;"></canvas> -->
+                </div>
+              </div>
+              <p class="totalTit">Total Process</p>
+            </section>
+          </div>
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+          <div class="item"></div>
+        </div>
+      </div>
     </div>
+   <!-- script files load  -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js"></script>
+   <script src="/myschedule/js/piechart.js"></script>
   </body>
 </html>

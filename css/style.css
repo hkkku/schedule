@@ -12,4 +12,36 @@ header .headerWrap .mIcon span:nth-child(3){width: 70%;}
 header h1{font-weight: 600; font-size: 22px; padding: 10px 0;}
 
 /* Container Style */
-.container{width: 100%; height: auto; padding: 20px 0;}
+.container{width: 100%; height: auto; padding: 20px 0; display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(5, minmax(100px, auto)); gap: 15px;} 
+.container .item{background: #fff;}
+.container .item:nth-child(1){grid-row-start: 1; grid-row-end: 5; display: flex; align-items: center; justify-content: center; padding: 30px 0;}
+.container .item:nth-child(6){grid-column-start: 1; grid-column-end: 3;}
+
+
+/* circle graph style */
+.graph-circle {
+  position: relative; width: 100%; height: 100%; display: flex; flex-direction: column;
+}
+.circle-graph-container {
+  position: relative;
+  display: flex; width: 100%; height: 100%;
+}
+.circle-graph {
+  margin: 0 15px;
+  position: relative;
+  width: 100%;
+  line-height: 1.2 !important;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+}
+canvas {
+  position: absolute;
+}
+
+.totalTit{width: 100%; height: auto; text-align: center;}
