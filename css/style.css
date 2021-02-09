@@ -17,31 +17,22 @@ header h1{font-weight: 600; font-size: 22px; padding: 10px 0;}
 .container .item:nth-child(1){grid-row-start: 1; grid-row-end: 5; display: flex; align-items: center; justify-content: center; padding: 30px 0;}
 .container .item:nth-child(6){grid-column-start: 1; grid-column-end: 3;}
 
-
 /* circle graph style */
-.graph-circle {
-  position: relative; width: 100%; height: 100%; display: flex; flex-direction: column;
-}
-.circle-graph-container {
-  position: relative;
-  display: flex; width: 100%; height: 100%;
-}
-.circle-graph {
-  margin: 0 15px;
-  position: relative;
-  width: 100%;
-  line-height: 1.2 !important;
-  -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-weight: 300;
-}
-canvas {
-  position: absolute;
-}
+.graph-circle {position: relative; width: 100%; height: 100%; display: flex; flex-direction: column;}
+.circle-graph-container {position: relative; display: flex; width: 100%; height: 100%;}
+.circle-graph {margin: 0 15px; position: relative; width: 100%; line-height: 1.2 !important; -webkit-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out;display: flex; flex-direction: column; justify-content: center; align-items: center; font-weight: 300;}
+canvas {position: absolute;}
 
-.totalTit{width: 100%; height: auto; text-align: center;}
+.circle-graph p{font-size: 45px; font-weight: 800; color: #12595b;}
+.totalTit{width: 100%; height: auto; text-align: center; font-size: 22px; color: #12595b; font-weight: 600;}
+
+/* sub portfolio progress section style */
+.subPfBar{padding: 10px; display: flex; align-items: center;}
+.subPfBar .pfImg{width: 15%; font-size: 25px; display: flex; align-items: center; justify-content: center; margin-right: 5px;}
+.subPfBar .pfImg i{color: #12595b;}
+.subPfBar .pfContents{width: 85%;}
+.subPfBar .pfContents h3{font-size: 18px; color: #12595b;}
+.subPfBar .pfContents p{color: #529faa; margin: 0 0 5px; font-size: 12px;}
+.subPfBar .pfContents b{font-weight: 600; font-size: 14px;}
+.subPfBar .pfBarBox{padding: 3px 0; border: 1px solid #529faa; border-radius: 10px; background: #edf7f0;}
+.subPfBar .pfBarBox .pfBar{display: block; width: 0; height: 15px; background: #12595b; border-radius: 0 10px 10px 0; border: 1px solid #12595b; border-radius: 15px; margin: 3px 0;}
