@@ -1,24 +1,35 @@
 @media screen and (max-width:980px) {
-  .center{padding: 0 15px;}
+  .center{padding: 0 25px;}
 }
 
 @media screen and (max-width:780px) {
   /* Container Media Style */
-  .container{width: 100%; height: auto; padding: 20px 0; display: grid; grid-template-columns: repeat(1, 1fr); grid-template-rows: repeat(9, minmax(100px, auto)); gap: 15px;} 
+  .wrap{justify-content: start; height: auto;}
+  .container{padding: 20px 0; display: grid; grid-template-columns: repeat(1, 1fr); grid-template-rows: repeat(9, minmax(100px, auto)); gap: 15px;} 
 
   .container .item:nth-child(1),
   .container .item:nth-child(2),
   .container .item:nth-child(3),
   .container .item:nth-child(4),
-  .container .item:nth-child(5){grid-column-start: 1; grid-column-end: 3;}
+  .container .item:nth-child(5),
+  .container .item:nth-child(6){grid-column-start: 1; grid-column-end: 3;}
 
   /* Button Box Media Style  */
   .btns{justify-content: center;}
   .btns button{padding: 5px 20px; font-size: 12px;}
+
+  /* footer media style */
+  footer{position: relative;}
 }
 
 @media screen and (max-width:400px) {
-  .container{grid-template-rows: repeat(9, minmax(70px, auto)); padding: 20px 0;}
+  
+  header .headerWrap h1{font-size: 14px;}
+  .container{grid-template-rows: repeat(9, minmax(70px, auto)); }
   .circle-graph p{font-size: 18px; font-weight: 400;}
   .subPfBar .pfImg{font-size: 20px;}
+  
+  /* footer media style */
+  footer{padding: 10px 50px;}
+  footer p{font-size: 12px;}
 }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Schedule</title>
+    <title>Input Board</title>
 
     <!--  Awesome Font link -->
     <link
@@ -39,14 +39,16 @@
       <!-- container section -->
       <div class="center">
         <form action="/myschedule/php/update_rate.php" method="GET" name="updateRate">
-          <div class="container">
+          <div class="inputContainer">
             
             <!-- total & each project progress bar -->
             <?php include $_SERVER['DOCUMENT_ROOT']."/myschedule/include/grid_up.php";?>
+
+            <div class="item"></div>
             <!-- edit button & section -->
             <div class="item btns">
               <button type="submit">진행률 수정</button>
-              <button type="button" onclick="javascript : location.href = '/myschedule/pages/input_form.php'">진행 상황 작성</button>
+              <button type="button">진행 상황 작성</button>
               <button type="button">진행 상황 확인</button>
             </div>
           </div>
