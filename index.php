@@ -37,12 +37,15 @@
       ?>
 
       <!-- container section -->
-      <div class="center">
+      <div class="center gridWrap">
         <form action="/myschedule/php/update_rate.php" method="GET" name="updateRate">
           <div class="container">
             
             <!-- total & each project progress bar -->
-            <?php include $_SERVER['DOCUMENT_ROOT']."/myschedule/include/grid_up.php";?>
+            <?php 
+            include $_SERVER['DOCUMENT_ROOT']."/myschedule/include/latest_date.php";
+            include $_SERVER['DOCUMENT_ROOT']."/myschedule/include/grid_up.php";
+            ?>
             <!-- edit button & section -->
             <div class="item btns">
               <button type="submit">진행률 수정</button>

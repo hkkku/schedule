@@ -13,4 +13,4 @@ button, input, textarea{outline: 0; font-family: 'Open Sans';}
 .clear::after{clear: both; display: block; content: '';} 
 .center{width: 100%; max-width: 980px; height: auto; margin: auto;}
 input::placeholder, textarea::placeholder{color: #529faa;}
-input:focus , textarea:focus{background: #f8f8f8;}
+_input:focus , textarea:focus{background: #f8f8f8;}

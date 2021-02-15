@@ -1,5 +1,5 @@
 /* contents wrap style */
-.wrap{width: 100%; height: 100vh; background: #edf7f0; display: flex; align-items: center; justify-content: center; flex-direction: column;}
+.wrap{width: 100%; height: 100vh; background: #edf7f0; display: flex; align-items: center; justify-content: space-between; flex-direction: column;}
 
 /* Header style */
 header{width: 100%; height: auto; background: #12595b; color: #fff;}
@@ -36,7 +36,7 @@ canvas {position: absolute;}
 .subPfBar .pfContents p{color: #529faa; margin: 0 0 5px; font-size: 12px;}
 .subPfBar .pfContents p b{font-weight: normal; font-size: 12px;}
 .subPfBar .pfContents .rateNum{font-weight: 600; font-size: 14px; width: 30px; text-align: right; border: 0; color: #12595b;}
-_.subPfBar .pfContents .rateNum:focus{border: 1px solid #529faa;}
+.subPfBar .pfContents .rateNum:focus{border: 1px solid #529faa;}
 .subPfBar .pfBarBox{padding: 3px 0; border: 1px solid #529faa; border-radius: 10px; background: #edf7f0;}
 .subPfBar .pfBarBox .pfBar{display: block; width: 0; height: 15px; background: #12595b; border-radius: 0 10px 10px 0; border: 1px solid #12595b; border-radius: 15px; margin: 3px 0;}
 
@@ -46,12 +46,25 @@ _.subPfBar .pfContents .rateNum:focus{border: 1px solid #529faa;}
 .btns button:nth-child(2){margin: 0 5px;}
 
 /* footer style */
-footer{width: 100%; height: auto; background: #12595b; padding: 15px 0; text-align: center; position: fixed; bottom: 0;}
+footer{width: 100%; height: auto; background: #12595b; padding: 15px 0; text-align: center; _position: fixed; bottom: 0;}
 footer p{color: #fff; font-weight: 400;}
 
 /* inputform page style */
-.inputContainer{width: 100%; height: auto; display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(6, minmax(100px, auto)); gap: 15px;}
+.inputContainer{width: 100%; height: auto; display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(6, minmax(100px, auto)); gap: 15px; padding: 30px 0;}
 .inputContainer .item{background: #fff;}
+
 .inputContainer .item:nth-child(1){grid-row-start: 1; grid-row-end: 5; display: flex; align-items: center; justify-content: center; padding: 30px 0;}
 .inputContainer .item:nth-child(6),
 .inputContainer .item:nth-child(7){grid-column-start: 1; grid-column-end: 3;}
+
+.inputContainer .subPfBar .pfContents .rateNum:focus{border: 0;}
+
+/* inputform style */
+.item.inputBox{padding: 10px; } 
+.item.inputBox .projectCate{width: 30%; height: 40px; border: 1px solid #529faa; border-radius: 0; outline: 0; color: #12595b; display: block; float: left; color: #12595b; font-family: 'Open Sans';}
+.item.inputBox .projectTit{display: block; float: right; width: calc(70% - 5px); height: 40px; border: 1px solid #529faa; padding: 5px; color: #12595b;font-family: 'Noto Sans KR';}
+.item.inputBox .projectCon{width: 100%; height: 150px; border: 1px solid #529faa; resize: none; padding: 5px; margin-top: 5px; color: #12595b; font-family: 'Noto Sans KR';}
+
+.item.inputBox .projectCate:focus,
+.item.inputBox .projectTit:focus,
+.item.inputBox .projectCon:focus{border: 1px solid #12595b;}

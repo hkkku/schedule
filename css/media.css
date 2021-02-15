@@ -6,13 +6,18 @@
   /* Container Media Style */
   .wrap{justify-content: start; height: auto;}
   .container{padding: 20px 0; display: grid; grid-template-columns: repeat(1, 1fr); grid-template-rows: repeat(9, minmax(100px, auto)); gap: 15px;} 
-
+  
   .container .item:nth-child(1),
   .container .item:nth-child(2),
   .container .item:nth-child(3),
   .container .item:nth-child(4),
   .container .item:nth-child(5),
   .container .item:nth-child(6){grid-column-start: 1; grid-column-end: 3;}
+  
+  /* input page media style */
+  .inputContainer{grid-template-columns: repeat(1, 1fr); grid-template-rows: repeat(5, minmax(100px, auto)); padding: 20px 0;}
+  .inputContainer .item{grid-column-start: 1; grid-column-end: 3;}
+  .inputContainer .item.subPfBar{display: none;}
 
   /* Button Box Media Style  */
   .btns{justify-content: center;}
@@ -20,6 +25,14 @@
 
   /* footer media style */
   footer{position: relative;}
+}
+
+@media screen and (max-width:650px) {
+  /* inputform media style */
+  .item.inputBox .projectCate{font-size: 12px; width: 100%;}
+  .item.inputBox .projectTit{font-size: 12px; width: 100%; margin-top: 5px;}
+  .item.inputBox .projectCon{font-size: 12px;}
+
 }
 
 @media screen and (max-width:400px) {
