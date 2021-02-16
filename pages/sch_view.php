@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Schedule</title>
+    <title>Schedule View</title>
 
     <!--  Awesome Font link -->
     <link
@@ -38,23 +38,23 @@
 
       <!-- container section -->
       <div class="center gridWrap">
-        <form action="/myschedule/php/update_rate.php" method="GET" name="updateRate">
-          <div class="container">
-            
-            <!-- total & each project progress bar -->
+        <div class="inputContainer">
+          <!-- total & each project progress bar -->
+          <?php 
+          include $_SERVER['DOCUMENT_ROOT']."/myschedule/include/latest_date.php";
+          include $_SERVER['DOCUMENT_ROOT']."/myschedule/include/grid_up.php";
+          ?>
+          <div class="item boardBox">
             <?php 
-            include $_SERVER['DOCUMENT_ROOT']."/myschedule/include/latest_date.php";
-            include $_SERVER['DOCUMENT_ROOT']."/myschedule/include/grid_up.php";
+            $include_path = $_GET['key'];
+            include $_SERVER['DOCUMENT_ROOT']."/myschedule/include/$include_path.php";
             ?>
-            <!-- edit button & section -->
-            <div class="item btns">
-              <button type="submit">진행률 수정</button>
-              <button type="button" onclick="javascript : location.href = '/myschedule/pages/input_form.php'">진행 상황 작성</button>
-              <button type="button" onclick="javascript : location.href='/myschedule/pages/sch_view.php?key=view_all'">진행 상황 확인</button>
-            </div>
           </div>
-          <!-- container end -->
-        </form>
+          <div class="item btns">
+           <a href="/myschedule/pages/input_form.php" onclick="schInput()" class="schInput">진행 상황 작성</a>
+          </div>
+          
+        <!-- container end -->
         <!-- updateRate form end -->
       </div>
       <!-- center end -->
@@ -67,5 +67,14 @@
    <script src="/myschedule/js/piechart.js"></script>
    <script src="/myschedule/js/custom.js"></script>
    <script src="/myschedule/js/total_avg.js"></script>
+   <script>
+      $(".boardList").hide();           
+      $(".boardList").slice(0, 5).show();   
+      
+      $(".loadMore button").click(function(){
+        // hide로 감춰진 boardList 는 hidden 으로 찾아낼 수 있음
+        $(".boardList:hidden").slice(0, 5).show();
+      });
+   </script>
   </body>
 </html>

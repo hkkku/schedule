@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Input Board</title>
+    <title>Schedule View</title>
 
     <!--  Awesome Font link -->
     <link
@@ -24,6 +24,7 @@
       <?php include $_SERVER['DOCUMENT_ROOT']."/myschedule/include/header.php";?>
 
       <?php
+        $detail_num = $_GET['num'];
         include $_SERVER['DOCUMENT_ROOT']."/myschedule/include/db_conn.php";
         $sql = "select * from schedule_progress";
 
@@ -44,34 +45,58 @@
           include $_SERVER['DOCUMENT_ROOT']."/myschedule/include/latest_date.php";
           include $_SERVER['DOCUMENT_ROOT']."/myschedule/include/grid_up.php";
           ?>
+          <div class="item viewBox">
+          <?php
+            include $_SERVER['DOCUMENT_ROOT']."/myschedule/include/db_conn.php";
+            $sql = "select * from sch_txt where sch_txt_num = $detail_num";
 
-          <div class="item inputBox">
-            <form action="/myschedule/php/schedule_input.php" method="POST" name="schInputForm">
-              <select name="projectCate" id="" class="projectCate">
-                <option value="DBProject">Database Project</option>
-                <option value="APIProject">API Project</option>
-                <option value="RenewalProject">Renewal Project</option>
-                <option value="WebProject">Web planning Project</option>
-              </select>
-              <input type="text" name="projectTit" class="projectTit" placeholder="일정을 입력해 주세요.">
-              <textarea name="projectCon" id="" class="projectCon" placeholder="진행 상황을 작성해 주세요."></textarea>
-            </form>
-            
-            <div class="item btns">
-              <button type="button" onclick="schInput()" class="schInput">진행 상황 작성</button>
-              <button type="button" onclick="javascript : location.href='/myschedule/pages/sch_view.php?key=view_all'">진행 상황 확인</button>
+            $board_result = mysqli_query($db_conn, $sql);
+            while($board_row = mysqli_fetch_array($board_result)){
+              $bo_num = $board_row['sch_txt_num'];
+              $bo_cate = $board_row['sch_txt_cate'];
+              $bo_tit = $board_row['sch_txt_tit'];
+              $bo_reg = $board_row['sch_txt_reg'];
+              $bo_con = $board_row['sch_txt_con'];
+          ?>
+
+            <div class="detailTit">
+              <h2><?=$bo_tit?></h2>
             </div>
+            <ul class="viewTable">
+              <li class="viewTitle">
+                <span class="boNum">번호</span>
+                <span class="boCate">카테고리</span>
+                <span class="boCon">내용</span>
+                <span class="boReg">작성일자</span>
+              </li>
 
+                <li class="viewList">
+                  <span class="boNum"><?=$bo_num?></span>
+                  <span class="boCate"><?=$bo_cate?></span>
+                  <span class="boCon"><em><?=$bo_con?></em></span>
+                  <span class="boReg"><?=$bo_reg?></span>
+                </li>
+
+              <?php
+                }
+              ?>
+            </ul>
           </div>
-          <!-- edit button & section -->
+          <div class="item btns">
+            <a href="#"><i class="fa fa-pen"></i></a>
+            <a onclick="confirmDel()"><i class="fa fa-trash"></i></a>
+            <a href="/myschedule/pages/sch_view.php?key=view_all" class="schInput">진행 상황 확인</a>
+          </div>
           
-        </div>
-          <!-- container end -->
+        <!-- container end -->
         <!-- updateRate form end -->
       </div>
       <!-- center end -->
-      <?php include $_SERVER['DOCUMENT_ROOT']."/myschedule/include/footer.php";?>
+   
     </div>
+    <?php 
+      include $_SERVER['DOCUMENT_ROOT']."/myschedule/include/footer.php";
+    ?>           
     <!-- wrap end -->
    <!-- script files load  -->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -80,20 +105,14 @@
    <script src="/myschedule/js/custom.js"></script>
    <script src="/myschedule/js/total_avg.js"></script>
    <script>
-    function schInput(){
-      if(!document.schInputForm.projectTit.value){
-        alert('일정을 입력해 주세요.');
-        document.schInputForm.projectTit.focus();
-        return;
-      }
-      if(!document.schInputForm.projectCon.value){
-        alert('진행 상황을 입력해 주세요.');
-        document.schInputForm.projectCon.focus();
-        return;
-      }
-      document.schInputForm.submit();
-    }
-  </script>
-
+     function confirmDel(){
+       let isCheck = confirm('정말로 삭제 하시겠습니까?');
+       if(isCheck == false){
+         return false;
+       } else {
+         location.href="/myschedule/php/detail_delete.php?num=<?=$detail_num?>"
+       }
+     }
+   </script>
   </body>
 </html>

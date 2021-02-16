@@ -8,13 +8,18 @@
   const rateNum = document.querySelectorAll('.rateNum');
 
   
-  for (let i = 0; i < rateNum.length; i++){
-   rateNum[i].readOnly = true;
 
-  }
 
   if(pathname.includes('input_form')){
     changeTit.innerHTML = "Schedule Input";
-  } 
+
+    for (let i = 0; i < rateNum.length; i++){
+     rateNum[i].readOnly = true;
+    }
+  } else if (pathname.includes('sch_view')){
+    changeTit.innerHTML = "Schedule View";
+  } else if (pathname.includes('detail_view')){
+    changeTit.innerHTML = "Schedule Detail View";
+  }
 
 </script>

@@ -25,14 +25,29 @@
 
   /* footer media style */
   footer{position: relative;}
+
+  /* schedule board page media style */
+  .item.boardBox .boardTable span{font-size: 12px;}
+
+  /* detail view page media style */
+  .item.viewBox .detailTit h2{font-size: 14px;}
+  .item.viewBox .viewTable span{font-size: 12px;}
 }
 
-@media screen and (max-width:650px) {
+@media screen and (max-width:600px) {
   /* inputform media style */
   .item.inputBox .projectCate{font-size: 12px; width: 100%;}
   .item.inputBox .projectTit{font-size: 12px; width: 100%; margin-top: 5px;}
   .item.inputBox .projectCon{font-size: 12px;}
 
+  /* schedule board page media style */
+  .item.boardBox .boardTable span.boNum{display: none;}
+  .item.boardBox .boardTable span.boReg{width: 30%;}
+  .cateTabs{text-align: center;}
+
+  /* detail page media style */
+  .item.viewBox .viewTable span.boNum{display: none;}
+  .item.viewBox .viewTable span.boReg{width: 30%;}
 }
 
 @media screen and (max-width:400px) {
@@ -45,4 +60,14 @@
   /* footer media style */
   footer{padding: 10px 50px;}
   footer p{font-size: 12px;}
+
+  /* schedule board page media style */
+  .item.boardBox .boardTable span.boCate{display: none;}
+  .item.boardBox .boardTable span.boTit{width: 60%;}
+  .item.boardBox .boardTable span.boReg{width: 40%;}
+
+  /* detail view page media style */
+  .item.viewBox .viewTable span.boCate{display: none;}
+  .item.viewBox .viewTable span.boCon{width: 60%;}
+  .item.viewBox .viewTable span.boReg{width: 40%;}
 }
