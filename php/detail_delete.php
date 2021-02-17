@@ -12,5 +12,5 @@
       location.href='/myschedule/pages/sch_view.php?key=view_all';
     </script>
   
-  "
+  ";
 ?>

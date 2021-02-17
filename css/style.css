@@ -3,18 +3,28 @@
 
 /* Header style */
 header{width: 100%; height: auto; background: #12595b; color: #fff;}
-header .headerWrap{display: flex; align-items: center; justify-content: space-between;}
-header .headerWrap .mIcon{width: 30px; height: auto; display: flex; flex-wrap: wrap; justify-content: flex-end;}
-header .headerWrap .mIcon span{width: 100%; height: 2px; background: #fff; display: block;}
+header .headerWrap{display: flex; align-items: center; justify-content: space-between; position: relative;}
+header .headerWrap .mIcon{width: 50px; height: auto; display: flex; flex-wrap: wrap; justify-content: flex-end; cursor: pointer; padding: 10px;}
+header .headerWrap .mIcon span{width: 100%; height: 2px; background: #fff; display: block; transition: all 0.4s;}
 header .headerWrap .mIcon span:nth-child(2){margin: 5px 0; width: 50%;}
 header .headerWrap .mIcon span:nth-child(3){width: 70%;}
 
+/* header .headerWrap .mIcon:hover span{width: 100%;} */
+header .headerWrap .mIcon.on{background: rgba(82, 159, 170, 0.3);}
+header .headerWrap .mIcon.on span{width: 100%;}
 header h1{font-weight: 600; font-size: 22px; padding: 10px 0;}
 header .headerWrap a{color: #fff; font-size: 25px;}
 
+/* Hidden Header style */
+.hiddenHeader{position: absolute; right: 0; top: 100%; z-index: 999;}
+.hiddenHeader .depth-1{display: none;}
+.hiddenHeader .depth-1 li{margin-top: 1px;}
+.hiddenHeader .depth-1 li a{display: block;  background: #12595b; color: #fff; padding: 15px; border: 1px solid #12595b;}
+.hiddenHeader .depth-1 li a:hover{background: rgba(82, 159, 170, 0.3);}
+
 /* Container Style */
 .container{width: 100%; height: auto; display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(5, minmax(100px, auto)); gap: 15px; padding: 30px 0;} 
-.container .item{background: #fff;}
+.container .item{background: #fff; border: 1px solid #529faa;}
 .container .item:nth-child(1){grid-row-start: 1; grid-row-end: 5; display: flex; align-items: center; justify-content: center; padding: 30px 0;}
 .container .item:nth-child(6){grid-column-start: 1; grid-column-end: 3;}
 
@@ -25,7 +35,7 @@ header .headerWrap a{color: #fff; font-size: 25px;}
 canvas {position: absolute;}
 
 .circle-graph p{font-size: 45px; font-weight: 800; color: #12595b;}
-.totalTit{width: 100%; height: auto; text-align: center; font-size: 22px; color: #12595b; font-weight: 600;}
+.totalTit{width: 100%; height: auto; text-align: center; font-size: 26px; color: #12595b; font-weight: bold;}
 
 /* sub portfolio progress section style */
 .subPfBar{padding: 10px; display: flex; align-items: center;}
@@ -42,6 +52,7 @@ canvas {position: absolute;}
 
 /* button box style */
 .btns{display: flex; align-items: center; justify-content: flex-end; padding: 10px;}
+.btns.view{padding: 10px 0;}
 .btns button, a.schInput{border: 1px solid #12595b; background: #12595b; color: #fff; font-family: 'Noto Sans KR'; padding: 10px 30px;} 
 .btns button:nth-child(2){margin: 0 5px;}
 
@@ -51,7 +62,8 @@ footer p{color: #fff; font-weight: 400;}
 
 /* inputform page style */
 .inputContainer{width: 100%; height: auto; display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(5, minmax(100px, auto)); gap: 15px; padding: 30px 0;}
-.inputContainer .item{background: #fff;}
+.inputContainer.view{padding: 30px 0 0;}
+.inputContainer .item{background: #fff; border: 1px solid #529faa;}
 
 .inputContainer .item:nth-child(1){grid-row-start: 1; grid-row-end: 5; display: flex; align-items: center; justify-content: center; padding: 30px 0;}
 .inputContainer .item:nth-child(6),
@@ -60,7 +72,7 @@ footer p{color: #fff; font-weight: 400;}
 .inputContainer .subPfBar .pfContents .rateNum:focus{border: 0;}
 
 /* inputform style */
-.item.inputBox{padding: 10px;} 
+.item.inputBox{padding: 25px;} 
 .item.inputBox .projectCate{width: 30%; height: 40px; border: 1px solid #529faa; border-radius: 0; outline: 0; color: #12595b; display: block; float: left; color: #12595b; font-family: 'Open Sans';}
 .item.inputBox .projectTit{display: block; float: right; width: calc(70% - 5px); height: 40px; border: 1px solid #529faa; padding: 5px; color: #12595b;font-family: 'Noto Sans KR';}
 .item.inputBox .projectCon{width: 100%; height: 150px; border: 1px solid #529faa; resize: none; padding: 5px; margin-top: 5px; color: #12595b; font-family: 'Noto Sans KR';}
@@ -70,7 +82,7 @@ footer p{color: #fff; font-weight: 400;}
 .item.inputBox .projectCon:focus{border: 1px solid #12595b;}
 
 /* schedule board page style */
-.item.boardBox{padding: 10px;} 
+.item.boardBox{padding: 25px;} 
 .item.boardBox .boardTable{width: 100%; height: auto;}
 .item.boardBox .boardTable li:last-child{border-bottom: 1px solid #529faa;}
 .item.boardBox .boardTable li:nth-child(odd){background: #edf7f0;}
@@ -85,15 +97,16 @@ footer p{color: #fff; font-weight: 400;}
 .item.boardBox .boardTable span.boTit{width: 50%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
 .item.boardBox .boardTable span.boReg{width: 20%;}
 
-.cateTabs{width: 100%; height: auto;}
-.cateTabs a{display: inline-block; border: 1px solid #12595b; background: #12595b; color: #fff; padding: 8px 15px; margin-bottom: 15px; font-family: 'Noto Sans KR';}
-.cateTabs a.active{background: #fff; color: #12595b;}
+.cateTabs{width: 100%; height: auto; text-align: center;}
+.cateTabs a{display: inline-block; color: #12595b; padding: 8px 15px; margin-bottom: 15px; font-family: 'Noto Sans KR'; font-size: 16px;}
+.cateTabs a.active{color: #529faa;}
 
-.loadMore{width: 100%; height: auto; margin-top: 5px; text-align: center;}
-.loadMore button{outline: 0; padding: 10px 30px; color: #12595b; font-family: 'Noto Sans KR'; background: none; font-size: 30px; border: 0;}
+.loadMore, .subBtn{width: 100%; height: auto; margin-top: 10px; text-align: center;}
+.loadMore button, .subBtn button{outline: 0; padding: 10px 30px; color: #12595b; font-family: 'Noto Sans KR'; background: none; font-size: 30px; border: 0;}
+.subBtn{display: none;}
 
 /* detail view page style */
-.item.viewBox{padding: 10px;} 
+.item.viewBox{padding: 25px;} 
 .item.viewBox .viewTable{width: 100%; height: auto;}
 
 .item.viewBox .viewTable .viewTitle,
@@ -117,3 +130,7 @@ footer p{color: #fff; font-weight: 400;}
 .item.btns a{margin-left: 10px;  padding: 10px 30px; background: #fff; border: 1px solid #12595b;}
 .item.btns a.schInput{background: #12595b;}
 .item.btns a i{font-size: 16px; color: #12595b;}
+
+/* hidden input style */
+.hiddenTit{outline: 0; border: 1px solid #12595b; padding: 5px; width: 50%; font-family: 'Noto Sans KR'; color: #529faa; display: none;}
+.hiddenCon{width: 100%; height: 100px; padding: 5px; font-family: 'Noto Sans KR'; border: 1px solid #12595b; outline: 0; resize: none; color: #529faa; overflow-y: hidden; display: none;}

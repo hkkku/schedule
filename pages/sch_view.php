@@ -38,7 +38,7 @@
 
       <!-- container section -->
       <div class="center gridWrap">
-        <div class="inputContainer">
+        <div class="inputContainer view">
           <!-- total & each project progress bar -->
           <?php 
           include $_SERVER['DOCUMENT_ROOT']."/myschedule/include/latest_date.php";
@@ -50,7 +50,7 @@
             include $_SERVER['DOCUMENT_ROOT']."/myschedule/include/$include_path.php";
             ?>
           </div>
-          <div class="item btns">
+          <div class="item btns view">
            <a href="/myschedule/pages/input_form.php" onclick="schInput()" class="schInput">진행 상황 작성</a>
           </div>
           

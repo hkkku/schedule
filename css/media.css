@@ -1,5 +1,7 @@
 @media screen and (max-width:980px) {
   .center{padding: 0 25px;}
+  /* 간격 맞춰주는 right 값 */
+  .hiddenHeader{right: 25px;}
 }
 
 @media screen and (max-width:780px) {
@@ -21,7 +23,7 @@
 
   /* Button Box Media Style  */
   .btns{justify-content: center;}
-  .btns button{padding: 5px 20px; font-size: 12px;}
+  .btns button,.loadMore button, .subBtn button{padding: 5px 20px; font-size: 12px;}
 
   /* footer media style */
   footer{position: relative;}
@@ -46,8 +48,14 @@
   .cateTabs{text-align: center;}
 
   /* detail page media style */
+  .item.viewBox .viewTable span.boCate{display: none;}
   .item.viewBox .viewTable span.boNum{display: none;}
   .item.viewBox .viewTable span.boReg{width: 30%;}
+  .item.viewBox .viewTable span.boCon{width: 70%;}
+
+  /* hidden input media style */
+  .hiddenTit{width: 100%; font-size: 12px;}
+  .hiddenCon{width: 100%; font-size: 12px;}
 }
 
 @media screen and (max-width:400px) {
@@ -68,6 +76,6 @@
 
   /* detail view page media style */
   .item.viewBox .viewTable span.boCate{display: none;}
-  .item.viewBox .viewTable span.boCon{width: 60%;}
-  .item.viewBox .viewTable span.boReg{width: 40%;}
+  .item.viewBox .viewTable span.boCon{width: 70%;}
+  .item.viewBox .viewTable span.boReg{width: 30%;}
 }

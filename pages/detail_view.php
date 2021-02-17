@@ -58,9 +58,10 @@
               $bo_reg = $board_row['sch_txt_reg'];
               $bo_con = $board_row['sch_txt_con'];
           ?>
-
+          <form action="/myschedule/php/detail_update.php?num=<?=$bo_num?>" method="POST">
             <div class="detailTit">
               <h2><?=$bo_tit?></h2>
+              <input type="text" value="<?=$bo_tit?>" class="hiddenTit" name="updateTit">
             </div>
             <ul class="viewTable">
               <li class="viewTitle">
@@ -73,7 +74,10 @@
                 <li class="viewList">
                   <span class="boNum"><?=$bo_num?></span>
                   <span class="boCate"><?=$bo_cate?></span>
-                  <span class="boCon"><em><?=$bo_con?></em></span>
+                  <span class="boCon">
+                    <em><?=$bo_con?></em>
+                    <textarea class="hiddenCon" name="updateCon"><?=$bo_con?></textarea>
+                  </span>
                   <span class="boReg"><?=$bo_reg?></span>
                 </li>
 
@@ -81,13 +85,20 @@
                 }
               ?>
             </ul>
+            <div class="subBtn">
+              <button type="submit"><i class="fa fa-keyboard"></i></button>
+            </div>
+          </form>
           </div>
           <div class="item btns">
-            <a href="#"><i class="fa fa-pen"></i></a>
+            <a class="updateConBtn"><i class="fa fa-pen"></i></a>
             <a onclick="confirmDel()"><i class="fa fa-trash"></i></a>
             <a href="/myschedule/pages/sch_view.php?key=view_all" class="schInput">진행 상황 확인</a>
           </div>
-          
+
+         
+
+        </div> 
         <!-- container end -->
         <!-- updateRate form end -->
       </div>
