@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Schedule</title>
+    <meta name="description" content="php 및 데이터베이스를 활용해 가중치 평균 계산법으로 스케줄 진척도를 확인할 수 있는 웹사이트 입니다.">
+    <title>Schedule Edit</title>
 
     <!--  Awesome Font link -->
     <link
